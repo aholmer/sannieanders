@@ -1,120 +1,542 @@
 <!DOCTYPE html>
 <html lang="da">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sannie & Anders - 17. Oktober 2026</title>
+    <title>Sannie & Anders - Bryllup 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        :root {
+            --sage: #9CAF88;
+            --sage-dark: #7A9568;
+            --cream: #FDF8F3;
+            --warm-white: #FFFEF9;
+            --text: #3D3D3D;
+            --text-light: #6B6B6B;
+            --gold: #C9A962;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Lato', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 254, 249, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            padding: 0.5rem;
+        }
+
+        nav a:hover {
+            color: var(--sage-dark);
+        }
+
+        section {
             min-height: 100vh;
+            padding: 8rem 2rem 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--sage) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.1;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(25px, 25px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .couple-photo {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--warm-white);
+            box-shadow: 0 20px 60px rgba(156, 175, 136, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .names {
+            font-size: 4rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .ampersand {
+            color: var(--sage);
+            font-style: italic;
+        }
+
+        .date {
+            font-size: 1.4rem;
+            color: var(--sage-dark);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .section-subtitle {
+            color: var(--sage-dark);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            margin-bottom: 3rem;
+        }
+
+        .content-card {
+            background: var(--warm-white);
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 700px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        /* Program Section */
+        #program {
+            background: var(--warm-white);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 600px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--sage), var(--gold));
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .timeline-dot {
+            width: 42px;
+            height: 42px;
+            background: var(--sage);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(156, 175, 136, 0.4);
         }
-        
-        .container {
-            background: white;
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+        }
+
+        /* Location Section */
+        #lokation {
+            background: var(--cream);
+        }
+
+        .location-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
             max-width: 800px;
+        }
+
+        .map-container {
             width: 100%;
-            padding: 60px 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .address {
             text-align: center;
         }
-        
-        h1 {
-            font-size: 3.5em;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-weight: 300;
+
+        .address h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
-        
-        .ampersand {
-            font-size: 0.8em;
-            color: #7f8c8d;
-            font-style: italic;
+
+        .address p {
+            color: var(--text-light);
         }
-        
-        .divider {
-            width: 100px;
-            height: 2px;
-            background: #bdc3c7;
-            margin: 30px auto;
+
+        .address a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background: var(--sage);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s;
         }
-        
-        .info {
-            font-size: 1.3em;
-            color: #34495e;
-            line-height: 1.8;
-            margin: 20px 0;
+
+        .address a:hover {
+            background: var(--sage-dark);
+            transform: translateY(-2px);
         }
-        
-        .date {
-            font-size: 1.5em;
-            color: #2c3e50;
-            font-weight: bold;
-            margin: 30px 0 10px 0;
+
+        /* Overnatning Section */
+        #overnatning {
+            background: var(--warm-white);
         }
-        
-        .location {
-            font-size: 1.2em;
-            color: #7f8c8d;
-            margin-bottom: 40px;
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
         }
-        
-        .message {
-            font-size: 1.1em;
-            color: #555;
-            font-style: italic;
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 1px solid #ecf0f1;
+
+        .info-box {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
         }
-        
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2.5em;
+
+        .info-box-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .info-box p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .highlight {
+            background: var(--sage);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* Ønskeliste Section */
+        #oenskeliste {
+            background: var(--cream);
+        }
+
+        .wishlist-content {
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .qr-code {
+            width: 180px;
+            height: 180px;
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            margin: 2rem auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wishlist-link {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(156, 175, 136, 0.4);
+        }
+
+        .wishlist-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(156, 175, 136, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: var(--cream);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        .hearts {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: var(--sage);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .names {
+                font-size: 2.5rem;
             }
-            .container {
-                padding: 40px 25px;
+
+            nav ul {
+                gap: 1rem;
             }
-            .info {
-                font-size: 1.1em;
+
+            nav a {
+                font-size: 0.75rem;
+            }
+
+            section {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .content-card {
+                padding: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Sannie <span class="ampersand">&</span> Anders</h1>
-        
-        <div class="divider"></div>
-        
-        <div class="info">
-            Vi gifter os!
+    <nav>
+        <ul>
+            <li><a href="#hero">Forside</a></li>
+            <li><a href="#program">Program</a></li>
+            <li><a href="#lokation">Lokation</a></li>
+            <li><a href="#overnatning">Overnatning</a></li>
+            <li><a href="#oenskeliste">Ønskeliste</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-content">
+            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=600&fit=crop&crop=faces" alt="Sannie og Anders" class="couple-photo">
+            <h1 class="names">Sannie <span class="ampersand">&</span> Anders</h1>
+            <p class="date">Lørdag d. 17. oktober 2026</p>
+            <p class="tagline">Vi skal giftes – og du er inviteret!</p>
         </div>
+    </section>
+
+    <section id="program">
+        <p class="section-subtitle">Dagens forløb</p>
+        <h2 class="section-title">Program</h2>
         
-        <p class="date">17. Oktober 2026</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot">💒</div>
+                <div class="timeline-content">
+                    <h3>Vielsen</h3>
+                    <p>Vi bliver gift – tidspunkt og sted følger</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">🥂</div>
+                <div class="timeline-content">
+                    <h3>Reception</h3>
+                    <p>Velkomstdrinks og hygge på lokationen</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">🍽️</div>
+                <div class="timeline-content">
+                    <h3>Middag</h3>
+                    <p>Festmiddag med taler og god stemning</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">💃</div>
+                <div class="timeline-content">
+                    <h3>Fest</h3>
+                    <p>Dans og fest til de små timer</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">☀️</div>
+                <div class="timeline-content">
+                    <h3>Søndag morgen</h3>
+                    <p>Fælles morgenmad for dem der har lyst</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lokation">
+        <p class="section-subtitle">Hvor det sker</p>
+        <h2 class="section-title">Lokation</h2>
         
-        <p class="location">
-            KFUM Lejren, Skåstrup
-        </p>
+        <div class="location-wrapper">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2213.8!2d10.0736!3d55.5647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c9a0000000001%3A0x1!2sStrandgyden%2028%2C%205400%20Bogense!5e0!3m2!1sda!2sdk!4v1" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="address">
+                <h3>Strandgyden 28</h3>
+                <p>5400 Bogense, Fyn</p>
+                <a href="https://www.google.com/maps/search/Strandgyden+28,+5400+Bogense" target="_blank">Åbn i Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="overnatning">
+        <p class="section-subtitle">Bliv og sov</p>
+        <h2 class="section-title">Overnatning</h2>
         
-        <div class="divider"></div>
+        <div class="info-grid">
+            <div class="info-box">
+                <div class="info-box-icon">🛏️</div>
+                <h3>64 sovepladser</h3>
+                <p>Der er rigeligt med plads til alle – helt gratis!</p>
+                <span class="highlight">Medbring selv sengetøj</span>
+            </div>
+            <div class="info-box">
+                <div class="info-box-icon">📅</div>
+                <h3>Kom tidligt</h3>
+                <p>Vi har stedet fra torsdag, så kom gerne tidligere og nyd Fyn!</p>
+                <span class="highlight">OBS: Fredag kan indebære arbejde 😉</span>
+            </div>
+            <div class="info-box">
+                <div class="info-box-icon">🥐</div>
+                <h3>Morgenmad søndag</h3>
+                <p>Vi slutter af med fælles morgenmad for dem der har lyst til at blive</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="oenskeliste">
+        <p class="section-subtitle">Gaver</p>
+        <h2 class="section-title">Ønskeliste</h2>
         
-        <p class="message">
-            Mere information følger snart
-        </p>
-    </div>
+        <div class="wishlist-content">
+            <p>Jeres nærvær er den største gave! Men hvis I har lyst til at give noget, har vi oprettet en ønskeliste.</p>
+            
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://oenskeskyen.dk" alt="QR kode til ønskeliste">
+            </div>
+            
+            <a href="https://oenskeskyen.dk" target="_blank" class="wishlist-link">Gå til ønskelisten</a>
+        </div>
+    </section>
+
+    <footer>
+        <h2>Vi glæder os til at se jer!</h2>
+        <div class="hearts">♥ ♥ ♥</div>
+        <p>Sannie & Anders • 17. oktober 2026</p>
+    </footer>
 </body>
 </html>
