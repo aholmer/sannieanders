@@ -3,51 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sannie & Anders - Bryllup 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <title>Sannie & Anders & Iris – Bryllup & Barnedåb 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --sage: #9CAF88;
             --sage-dark: #7A9568;
+            --sage-light: #b8cba8;
             --cream: #FDF8F3;
             --warm-white: #FFFEF9;
             --text: #3D3D3D;
             --text-light: #6B6B6B;
             --gold: #C9A962;
+            --lavender: #9B8BB4;
+            --lavender-light: #e8e0f0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Lato', sans-serif;
             background: var(--cream);
             color: var(--text);
             line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
+        /* ── Nav ── */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 254, 249, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255,254,249,0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             z-index: 1000;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 0.6rem 1rem;
+            box-shadow: 0 1px 12px rgba(0,0,0,0.06);
         }
 
         nav ul {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 0.4rem;
             list-style: none;
             flex-wrap: wrap;
         }
@@ -55,50 +55,57 @@
         nav a {
             text-decoration: none;
             color: var(--text);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 0.78rem;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
             transition: color 0.3s;
-            padding: 0.5rem;
+            padding: 0.45rem 0.55rem;
+            border-radius: 6px;
+            white-space: nowrap;
         }
 
-        nav a:hover {
-            color: var(--sage-dark);
-        }
+        nav a:hover, nav a:active { color: var(--sage-dark); background: rgba(156,175,136,0.08); }
 
+        /* ── Section base ── */
         section {
-            min-height: 100vh;
-            padding: 8rem 2rem 4rem;
+            padding: 5.5rem 1.25rem 3rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+
+        .section-title { font-size: 2rem; margin-bottom: 0.4rem; color: var(--text); text-align: center; }
+        .section-subtitle {
+            color: var(--sage-dark);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-bottom: 1.8rem;
+            text-align: center;
         }
 
-        /* Hero Section */
+        /* ── Hero ── */
         #hero {
             background: linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 100svh;
+            padding-top: 4.5rem;
         }
 
         #hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background: radial-gradient(circle, var(--sage) 1px, transparent 1px);
             background-size: 50px 50px;
-            opacity: 0.1;
-            animation: float 20s linear infinite;
+            opacity: 0.08;
+            animation: float 25s linear infinite;
         }
 
         @keyframes float {
@@ -106,311 +113,260 @@
             100% { transform: translate(25px, 25px); }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
+        .hero-content { position: relative; z-index: 1; }
 
         .couple-photo {
-            width: 280px;
-            height: 280px;
+            width: 200px; height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid var(--warm-white);
-            box-shadow: 0 20px 60px rgba(156, 175, 136, 0.3);
-            margin-bottom: 2rem;
+            border: 5px solid var(--warm-white);
+            box-shadow: 0 16px 48px rgba(156,175,136,0.3);
+            margin-bottom: 1.5rem;
         }
 
-        .names {
-            font-size: 4rem;
-            color: var(--text);
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-        }
-
-        .ampersand {
-            color: var(--sage);
-            font-style: italic;
-        }
-
-        .date {
-            font-size: 1.4rem;
-            color: var(--sage-dark);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .tagline {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            font-style: italic;
-        }
-
-        /* Section Styling */
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-
-        .section-subtitle {
-            color: var(--sage-dark);
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .names { font-size: 2.6rem; color: var(--text); margin-bottom: 0.3rem; letter-spacing: 1px; line-height: 1.2; }
+        .ampersand { color: var(--sage); font-style: italic; }
+        .child-name { font-size: 1.8rem; color: var(--lavender); font-family: 'Playfair Display', serif; margin-bottom: 0.6rem; }
+        .event-type {
             font-size: 0.85rem;
-            margin-bottom: 3rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--sage-dark);
+            margin-bottom: 1.2rem;
         }
+        .date { font-size: 1.15rem; color: var(--sage-dark); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.4rem; }
+        .tagline { font-size: 1rem; color: var(--text-light); font-style: italic; }
 
-        .content-card {
-            background: var(--warm-white);
-            padding: 3rem;
-            border-radius: 20px;
-            max-width: 700px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-        }
+        /* ── Program ── */
+        #program { background: var(--warm-white); }
 
-        /* Program Section */
-        #program {
-            background: var(--warm-white);
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 600px;
-        }
-
+        .timeline { position: relative; max-width: 540px; width: 100%; }
         .timeline::before {
             content: '';
             position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
+            left: 20px; top: 0; bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, var(--sage), var(--gold));
+            background: linear-gradient(to bottom, var(--sage), var(--lavender), var(--gold));
         }
 
-        .timeline-item {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2.5rem;
+        .timeline-item { display: flex; gap: 1.2rem; margin-bottom: 2rem; position: relative; }
+        .timeline-dot {
+            width: 42px; height: 42px;
+            background: var(--sage);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            color: white; font-size: 1.15rem;
+            box-shadow: 0 4px 14px rgba(156,175,136,0.35);
+        }
+        .timeline-content h3 { font-size: 1.15rem; margin-bottom: 0.15rem; }
+        .timeline-content .time { font-weight: 700; color: var(--sage-dark); font-size: 0.9rem; }
+        .timeline-content p { color: var(--text-light); font-size: 0.95rem; }
+
+        .timeline-break {
+            margin: 1.5rem 0 1.5rem 52px;
+            padding: 1rem 1.2rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--lavender-light) 100%);
+            border-radius: 12px;
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.9rem;
             position: relative;
         }
 
-        .timeline-dot {
-            width: 42px;
-            height: 42px;
-            background: var(--sage);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: white;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(156, 175, 136, 0.4);
-        }
+        /* ── Location ── */
+        #lokation { background: var(--cream); }
 
-        .timeline-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-content p {
-            color: var(--text-light);
-        }
-
-        /* Location Section */
-        #lokation {
-            background: var(--cream);
-        }
-
-        .location-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-            max-width: 800px;
-        }
-
-        .map-container {
+        .locations-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 700px;
             width: 100%;
-            height: 300px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .address {
+        .location-card {
+            background: var(--warm-white);
+            border-radius: 16px;
+            padding: 1.8rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
             text-align: center;
         }
 
-        .address h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+        .location-card .icon { font-size: 2.2rem; margin-bottom: 0.6rem; }
+        .location-card h3 { font-size: 1.3rem; margin-bottom: 0.2rem; }
+        .location-card .venue-name { color: var(--sage-dark); font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; }
+        .location-card p { color: var(--text-light); font-size: 0.95rem; }
+
+        .map-container {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 1rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
         }
 
-        .address p {
-            color: var(--text-light);
-        }
+        .map-container iframe { width: 100%; height: 100%; border: none; }
 
-        .address a {
+        .map-link {
             display: inline-block;
             margin-top: 1rem;
-            padding: 0.8rem 2rem;
+            padding: 0.65rem 1.6rem;
             background: var(--sage);
             color: white;
             text-decoration: none;
             border-radius: 30px;
+            font-size: 0.9rem;
             transition: all 0.3s;
         }
+        .map-link:hover { background: var(--sage-dark); transform: translateY(-2px); }
 
-        .address a:hover {
-            background: var(--sage-dark);
-            transform: translateY(-2px);
-        }
-
-        /* Overnatning Section */
-        #overnatning {
-            background: var(--warm-white);
-        }
+        /* ── Overnatning ── */
+        #overnatning { background: var(--warm-white); }
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 900px;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            max-width: 700px;
+            width: 100%;
         }
 
         .info-box {
             background: var(--cream);
-            padding: 2rem;
-            border-radius: 15px;
+            padding: 1.6rem;
+            border-radius: 14px;
             text-align: center;
         }
 
-        .info-box-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .info-box h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .info-box p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
+        .info-box-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .info-box h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .info-box p { color: var(--text-light); font-size: 0.93rem; }
 
         .highlight {
             background: var(--sage);
             color: white;
-            padding: 0.3rem 0.8rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             display: inline-block;
             margin-top: 0.5rem;
         }
 
-        /* Ønskeliste Section */
-        #oenskeliste {
-            background: var(--cream);
+        /* ── Praktisk ── */
+        #praktisk { background: var(--cream); }
+
+        .praktisk-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            max-width: 700px;
+            width: 100%;
         }
 
-        .wishlist-content {
+        .praktisk-card {
+            background: var(--warm-white);
+            padding: 1.6rem;
+            border-radius: 14px;
             text-align: center;
-            max-width: 500px;
         }
+
+        .praktisk-card .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .praktisk-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .praktisk-card p { color: var(--text-light); font-size: 0.93rem; }
+
+        .rsvp-box {
+            background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+            color: white;
+            padding: 2rem 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+            margin-top: 1.5rem;
+            box-shadow: 0 8px 30px rgba(122,149,104,0.3);
+        }
+
+        .rsvp-box h3 { font-size: 1.3rem; color: white; margin-bottom: 0.5rem; }
+        .rsvp-box p { opacity: 0.95; font-size: 0.95rem; }
+        .rsvp-phone {
+            display: inline-block;
+            margin-top: 0.8rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: white;
+            text-decoration: none;
+        }
+        .rsvp-deadline { font-size: 0.85rem; opacity: 0.8; margin-top: 0.4rem; }
+
+        /* ── Ønskeliste ── */
+        #oenskeliste { background: var(--warm-white); }
+
+        .wishlist-content { text-align: center; max-width: 440px; }
 
         .qr-code {
-            width: 180px;
-            height: 180px;
+            width: 160px; height: 160px;
             background: white;
-            padding: 15px;
-            border-radius: 15px;
-            margin: 2rem auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 12px;
+            border-radius: 14px;
+            margin: 1.5rem auto;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
         }
-
-        .qr-code img {
-            width: 100%;
-            height: 100%;
-        }
+        .qr-code img { width: 100%; height: 100%; }
 
         .wishlist-link {
             display: inline-block;
-            padding: 1rem 2.5rem;
+            padding: 0.8rem 2rem;
             background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
             color: white;
             text-decoration: none;
             border-radius: 30px;
-            font-size: 1rem;
-            letter-spacing: 1px;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
             transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(156, 175, 136, 0.4);
+            box-shadow: 0 5px 20px rgba(156,175,136,0.35);
         }
+        .wishlist-link:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(156,175,136,0.45); }
 
-        .wishlist-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(156, 175, 136, 0.5);
-        }
-
-        /* Footer */
+        /* ── Footer ── */
         footer {
             background: var(--text);
             color: var(--cream);
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 2.5rem 1.5rem;
+        }
+        footer h2 { font-size: 1.5rem; margin-bottom: 0.8rem; }
+        footer p { opacity: 0.8; font-size: 0.95rem; }
+        .hearts { font-size: 1.3rem; margin: 0.8rem 0; color: var(--sage-light); }
+
+        /* ── Desktop (≥640px) ── */
+        @media (min-width: 640px) {
+            nav { padding: 0.8rem 2rem; }
+            nav ul { gap: 1.5rem; }
+            nav a { font-size: 0.85rem; padding: 0.5rem 0.8rem; }
+
+            section { padding: 7rem 2rem 4rem; }
+
+            .couple-photo { width: 260px; height: 260px; }
+            .names { font-size: 3.5rem; }
+            .child-name { font-size: 2.2rem; }
+            .date { font-size: 1.3rem; }
+
+            .section-title { font-size: 2.4rem; }
+
+            .locations-grid { grid-template-columns: 1fr 1fr; }
+            .info-grid { grid-template-columns: repeat(3, 1fr); }
+            .praktisk-grid { grid-template-columns: 1fr 1fr; }
+
+            .map-container { height: 280px; }
+
+            footer h2 { font-size: 2rem; }
         }
 
-        footer h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        footer p {
-            opacity: 0.8;
-        }
-
-        .hearts {
-            font-size: 1.5rem;
-            margin: 1rem 0;
-            color: var(--sage);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .names {
-                font-size: 2.5rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            nav a {
-                font-size: 0.75rem;
-            }
-
-            section {
-                padding: 6rem 1.5rem 3rem;
-            }
-
-            .content-card {
-                padding: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
+        @media (min-width: 900px) {
+            .names { font-size: 4rem; }
         }
     </style>
 </head>
@@ -421,36 +377,46 @@
             <li><a href="#program">Program</a></li>
             <li><a href="#lokation">Lokation</a></li>
             <li><a href="#overnatning">Overnatning</a></li>
+            <li><a href="#praktisk">Praktisk</a></li>
             <li><a href="#oenskeliste">Ønskeliste</a></li>
         </ul>
     </nav>
 
     <section id="hero">
         <div class="hero-content">
-            <img src="sannie-anders.jpg" alt="Sannie og Anders" class="couple-photo">
+            <img src="sannie-anders.jpg" alt="Sannie, Anders og Iris" class="couple-photo">
             <h1 class="names">Sannie <span class="ampersand">&</span> Anders</h1>
+            <p class="child-name"><span class="ampersand">&</span> Iris</p>
+            <p class="event-type">Bryllup & barnedåb</p>
             <p class="date">Lørdag d. 17. oktober 2026</p>
-            <p class="tagline">Vi skal giftes – og du er inviteret!</p>
+            <p class="tagline">Vi skal giftes, Iris skal døbes – og du er inviteret!</p>
         </div>
     </section>
 
     <section id="program">
         <p class="section-subtitle">Dagens forløb</p>
         <h2 class="section-title">Program</h2>
-        
+
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-dot">💒</div>
                 <div class="timeline-content">
-                    <h3>Vielsen</h3>
-                    <p>Vi bliver gift – tidspunkt og sted følger</p>
+                    <h3>Vielse & barnedåb</h3>
+                    <p class="time">Kl. 12:00</p>
+                    <p>Bogense Kirke, Kirkestræde 39</p>
                 </div>
             </div>
+
+            <div class="timeline-break">
+                Fri leg, middagslur eller en tur i det smukke område inden festen begynder
+            </div>
+
             <div class="timeline-item">
                 <div class="timeline-dot">🥂</div>
                 <div class="timeline-content">
                     <h3>Reception</h3>
-                    <p>Velkomstdrinks og hygge på lokationen</p>
+                    <p class="time">Kl. 16:00</p>
+                    <p>Velkomstdrinks og hygge ved Skåstrup Strandlejr</p>
                 </div>
             </div>
             <div class="timeline-item">
@@ -470,8 +436,9 @@
             <div class="timeline-item">
                 <div class="timeline-dot">☀️</div>
                 <div class="timeline-content">
-                    <h3>Søndag morgen</h3>
-                    <p>Fælles morgenmad for dem der har lyst</p>
+                    <h3>Søndag morgenmad</h3>
+                    <p class="time">Kl. 10:00</p>
+                    <p>Fælles morgenmad for alle der har lyst</p>
                 </div>
             </div>
         </div>
@@ -480,15 +447,27 @@
     <section id="lokation">
         <p class="section-subtitle">Hvor det sker</p>
         <h2 class="section-title">Lokation</h2>
-        
-        <div class="location-wrapper">
+
+        <div class="locations-grid">
+            <div class="location-card">
+                <div class="icon">⛪</div>
+                <h3>Bogense Kirke</h3>
+                <p class="venue-name">Vielse & barnedåb kl. 12</p>
+                <p>Kirkestræde 39<br>5400 Bogense</p>
+                <a href="https://www.google.com/maps/search/Bogense+Kirke+Kirkestræde+39+5400+Bogense" target="_blank" class="map-link">Åbn i Maps</a>
+            </div>
+            <div class="location-card">
+                <div class="icon">🏖️</div>
+                <h3>Skåstrup Strandlejr</h3>
+                <p class="venue-name">Reception & fest fra kl. 16</p>
+                <p>Strandgyden 28<br>5400 Bogense</p>
+                <a href="https://www.google.com/maps/search/Strandgyden+28,+5400+Bogense" target="_blank" class="map-link">Åbn i Maps</a>
+            </div>
+        </div>
+
+        <div style="max-width:700px; width:100%; margin-top:1.5rem;">
             <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2213.8!2d10.0736!3d55.5647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c9a0000000001%3A0x1!2sStrandgyden%2028%2C%205400%20Bogense!5e0!3m2!1sda!2sdk!4v1" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <div class="address">
-                <h3>Strandgyden 28</h3>
-                <p>5400 Bogense, Fyn</p>
-                <a href="https://www.google.com/maps/search/Strandgyden+28,+5400+Bogense" target="_blank">Åbn i Google Maps</a>
             </div>
         </div>
     </section>
@@ -496,39 +475,64 @@
     <section id="overnatning">
         <p class="section-subtitle">Bliv og sov</p>
         <h2 class="section-title">Overnatning</h2>
-        
+
         <div class="info-grid">
             <div class="info-box">
                 <div class="info-box-icon">🛏️</div>
                 <h3>64 sovepladser</h3>
-                <p>Der er rigeligt med plads til alle – helt gratis!</p>
-                <span class="highlight">Medbring selv sengetøj</span>
+                <p>Rigeligt med plads til alle – helt gratis!</p>
+                <span class="highlight">Medbring eget sengetøj</span>
             </div>
             <div class="info-box">
                 <div class="info-box-icon">📅</div>
-                <h3>Kom tidligt LOL</h3>
-                <p>Vi har stedet fra torsdag, så kom gerne tidligere og nyd Fyn!</p>
-                <span class="highlight">OBS: Fredag kan indebære arbejde 😉</span>
+                <h3>Kom i god tid</h3>
+                <p>Lokalerne er til rådighed fra fredag, så kom gerne tidligt og nyd Fyn!</p>
+                <span class="highlight">Fredag kan indebære arbejde 😉</span>
             </div>
             <div class="info-box">
                 <div class="info-box-icon">🥐</div>
                 <h3>Morgenmad søndag</h3>
-                <p>Vi slutter af med fælles morgenmad for dem der har lyst til at blive</p>
+                <p>Vi runder weekenden af med fælles morgenmad kl. 10:00</p>
             </div>
+        </div>
+    </section>
+
+    <section id="praktisk">
+        <p class="section-subtitle">Godt at vide</p>
+        <h2 class="section-title">Praktisk info</h2>
+
+        <div class="praktisk-grid">
+            <div class="praktisk-card">
+                <div class="icon">👶</div>
+                <h3>Børn</h3>
+                <p>Børn er velkomne i kirken, men ikke til festen.<br>Babyer er undtaget.</p>
+            </div>
+            <div class="praktisk-card">
+                <div class="icon">🍽️</div>
+                <h3>Morgenmad søndag</h3>
+                <p>Giv besked når du svarer, om du ønsker at blive til morgenmad søndag kl. 10.</p>
+            </div>
+        </div>
+
+        <div class="rsvp-box">
+            <h3>Svar udbedes</h3>
+            <p>Giv besked om du kommer, og om du ønsker overnatning og/eller morgenmad søndag.</p>
+            <a href="tel:+4561474207" class="rsvp-phone">61 47 42 07</a>
+            <p class="rsvp-deadline">Senest d. 17. august 2026</p>
         </div>
     </section>
 
     <section id="oenskeliste">
         <p class="section-subtitle">Gaver</p>
         <h2 class="section-title">Ønskeliste</h2>
-        
+
         <div class="wishlist-content">
             <p>Jeres nærvær er den største gave! Men hvis I har lyst til at give noget, har vi oprettet en ønskeliste.</p>
-            
+
             <div class="qr-code">
                 <img src="qr-kode-oenskeskyen.png" alt="QR kode til ønskeliste">
             </div>
-            
+
             <a href="https://onskeskyen.dk/s/em3rqj" target="_blank" class="wishlist-link">Gå til ønskelisten</a>
         </div>
     </section>
@@ -536,7 +540,7 @@
     <footer>
         <h2>Vi glæder os til at se jer!</h2>
         <div class="hearts">♥ ♥ ♥</div>
-        <p>Sannie & Anders • 17. oktober 2026</p>
+        <p>Sannie & Anders & Iris • 17. oktober 2026</p>
     </footer>
 </body>
 </html>
