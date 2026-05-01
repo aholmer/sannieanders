@@ -304,7 +304,16 @@
         /* ── Ønskeliste ── */
         #oenskeliste { background: var(--warm-white); }
 
-        .wishlist-content { text-align: center; max-width: 440px; }
+        .wishlist-content { text-align: center; max-width: 520px; }
+
+        .qr-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .qr-item h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
 
         .qr-code {
             width: 160px; height: 160px;
@@ -384,7 +393,7 @@
 
     <section id="hero">
         <div class="hero-content">
-            <img src="sannie-anders-iris.jpg" alt="Sannie, Anders og Iris" class="couple-photo">
+            <img src="sannie-anders.jpg" alt="Sannie, Anders og Iris" class="couple-photo">
             <h1 class="names">Sannie <span class="ampersand">&</span> Anders</h1>
             <p class="child-name"><span class="ampersand">&</span> Iris</p>
             <p class="event-type">Bryllup & barnedåb</p>
@@ -527,13 +536,23 @@
         <h2 class="section-title">Ønskeliste</h2>
 
         <div class="wishlist-content">
-            <p>Jeres nærvær er den største gave! Men hvis I har lyst til at give noget, har vi oprettet en ønskeliste.</p>
+            <p>Jeres nærvær er den største gave! Men hvis I har lyst til at give noget, har vi oprettet ønskelister.</p>
 
-            <div class="qr-code">
-                <img src="qr-kode-oenskeskyen.png" alt="QR kode til ønskeliste">
+            <div class="qr-grid">
+                <div class="qr-item">
+                    <h3>Sannie & Anders</h3>
+                    <div class="qr-code">
+                        <img src="qr-kode-oenskeskyen.png" alt="QR kode til ønskeliste for Sannie & Anders">
+                    </div>
+                    <a href="https://onskeskyen.dk/s/em3rqj" target="_blank" class="wishlist-link">Gå til ønskelisten</a>
+                </div>
+                <div class="qr-item">
+                    <h3>Iris</h3>
+                    <div class="qr-code">
+                        <img src="iris-qr.png" alt="QR kode til ønskeliste for Iris">
+                    </div>
+                </div>
             </div>
-
-            <a href="https://onskeskyen.dk/s/em3rqj" target="_blank" class="wishlist-link">Gå til ønskelisten</a>
         </div>
     </section>
 
